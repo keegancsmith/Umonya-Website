@@ -6,7 +6,7 @@ from umonya.apply.views import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^apply/', include()),
+    (r'^apply/', include('umonya.apply.urls')),
     # Example:
     # (r'^umonya/', include('umonya.foo.urls')),
 
