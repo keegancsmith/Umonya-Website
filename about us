@@ -1,20 +1,3 @@
-/*
-who we are: experience, industry, academic
-
-what we do: free workshops, aimed at scholars, to introduce computer programming
-
-why we are doing what we are doing: IT is needed/widespread, endless possiblities (academic, commertial, list industry), philanthropic, equal opportunity, not all have opportunity for advanced IT skills, do our our bit to facilitate these
-
-{-what we don't do-}: computer literacy (we do not teach you how to use . this is a prerequisite. you don't necessarily need to be a computer guru). We don't teach you how to *use* software; we teach you how to *make* software. e.g. word processors , don't intend to replace South African IT ciricula, 
-
-list the volunteers (tutors, lecturers, core team? ...)
-
-We are a group of experienced programmers who are enthusiastic about computer programming.
-We freely volunteer our time introduce others to the endless possiblities that computer programming facilitates.
-
---through a collaborative effort, tslil's job
-*/
-
 We are a group of experienced programmers who are enthusiastic about computer programming. It was from this enthusiasm that the idea of Umonya was born, with the goal of introducing the endless possibilities afforded by computer programming to learners in free workshops.
 
 Information Technology (IT) has become integral to many fields in the modern world. Academia, commerce and industry all require IT at fundamental level to function efficiently. Unfortunately, not all have had the opportunity to develop advanced IT skills, such as computer programming. Through a collaborative effort, Umonya workshops teach Python programming to those who have not yet had such an opportunity.
@@ -23,6 +6,9 @@ We don't teach leaners how to *use* software; we teach them how to *make* softwa
 
 Umonya aims to make learning programming fun and free. If you do not have fun, we offer a double-your-money-back guarentee.
 
+/*
+ * list the volunteers (core team, lecturers, tutors ...)
+ * testimonials...
+ * Umonya is not just a course, it's a community... ?
+ */
 
-* list the volunteers (core team, lecturers, tutors ...)
-* testimonials...
