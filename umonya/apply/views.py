@@ -62,3 +62,7 @@ def list_events(request):
         i+=1
     t = loader.get_template('events.html')
     return HttpResponse(t.render(Context({'events':e})))
+
+def render_page(request, template=''):
+    t=loader.get_template(template)
+    return HttpResponse(t.render(Context()))
