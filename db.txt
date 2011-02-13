@@ -37,7 +37,8 @@ active_ind(true)     - boolean
 event_tb
 --------
 event_id         - int
-event_datetime   - datetime
+start_datetime   - datetime
+end_datetime     - datetime
 location_id      - int
 application_deadline - datetime
 url              - varchar(100)
