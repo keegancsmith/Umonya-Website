@@ -14,13 +14,13 @@ class StudentApplyForm(forms.Form):
     concat_no = forms.CharField(max_length=20)
     alt_contact_no = forms.CharField(max_length=20, required=False)
 
-def apply(request):
-    if request.method == 'POST': # If the form has been submitted...
-        form = StudentApplyForm(request.POST) # A form bound to the POST data
-        if form.is_valid(): # All validation rules pass
-            pass
+def student_apply(request):
+    if request.method == 'POST':
+        form = StudentApplyForm(request.POST)
+        if form.is_valid():
+            pass # TODO save results of form
     else:
-        form = StudentApplyForm() # An unbound form
+        form = StudentApplyForm()
     t = loader.get_template('apply.html')
     return HttpResponse(t.render(Context({'form': form})))
 
@@ -30,3 +30,13 @@ class TeacherApplyForm(forms.Form):
     school = forms.CharField(max_length=50)
     email = forms.EmailField()
     concat_no = forms.CharField(max_length=20)
+
+def teacher_apply(request):
+    if request.method == 'POST':
+        form = TeacherApplyForm(request.POST)
+        if form.is_valid():
+            pass # TODO save results of form
+    else:
+        form = TeacherApplyForm()
+    t = loader.get_template('apply.html')
+    return HttpResponse(t.render(Context({'form': form})))
