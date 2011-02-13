@@ -1,11 +1,19 @@
 from django.conf.urls.defaults import *
 from umonya.apply.views import *
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    # Static files
+    (r'^(?P<path>img/.*)$', 'django.views.static.serve',
+      {'document_root': settings.STATIC_DOC_ROOT}),
+    (r'^(?P<path>css/.*)$', 'django.views.static.serve',
+      {'document_root': settings.STATIC_DOC_ROOT}),
+    (r'^(?P<path>js/.*)$', 'django.views.static.serve',
+      {'document_root': settings.STATIC_DOC_ROOT}),
     (r'^apply/', include('umonya.apply.urls')),
     # Example:
     # (r'^umonya/', include('umonya.foo.urls')),
