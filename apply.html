@@ -1,12 +1,15 @@
 {% extends "skeleton.html" %}
 {% block content %}
-<div id="content" class="content-wrap">
   <div id="right-content">
 
   </div>
   <div id="main-content">
     <h2>Apply</h2>
-    <h3>Course: {{ course.date }} - {{ course.location }}</h3>
+    {% for course in courses %}
+      <h3>Course: {{ course.date }} - {{ course.location }}</h3>
+      <p>{{ course.description }}</p>
+      <p>{{ course.students_count }} from {{ course.schools_count }} have applied.</p>
+      <a class=".apply-button" href="application/{{ course.id }}">Apply</a>
+    {% endfor %}
   </div>
-</div>
 {% endblock %}
