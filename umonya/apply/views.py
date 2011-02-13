@@ -1,7 +1,7 @@
 # Create your views here.
 from django.http import HttpResponse
 from django import forms
-from django import template
+from django.template import loader, Context
 from umonya.apply.models import Student, Application
 
 class StudentApplyForm(forms.Form):
@@ -21,5 +21,12 @@ def apply(request):
             pass
     else:
         form = StudentApplyForm() # An unbound form
-    t = template.loader.get_template('form.html')
+    t = loader.get_template('apply.html')
     return HttpResponse(t.render(Context({'form': form})))
+
+class TeacherApplyForm(forms.Form):
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30)
+    school = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    concat_no = forms.CharField(max_length=20)
