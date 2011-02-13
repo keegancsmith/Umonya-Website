@@ -14,7 +14,7 @@ urlpatterns = patterns('',
       {'document_root': settings.STATIC_DOC_ROOT}),
     (r'^(?P<path>js/.*)$', 'django.views.static.serve',
       {'document_root': settings.STATIC_DOC_ROOT}),
-    (r'^apply/', include('umonya.apply.urls')),
+    (r'', include('umonya.apply.urls')),
     # Example:
     # (r'^umonya/', include('umonya.foo.urls')),
 
