@@ -54,7 +54,7 @@ class Reviewer(models.Model):
     event_reviewer_id = models.ManyToManyField(Event, related_name="reviewers")
 
 class Application(models.Model):
-    student_id         = models.ForeignKey(Teacher, related_name="applications")
+    student_id         = models.ForeignKey(Student, related_name="applications")
     event_id           = models.ForeignKey(Event, related_name="applications")
     creation_datetime  = models.DateTimeField()
     motivation         = models.TextField(null=True, blank=True)
