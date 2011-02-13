@@ -26,7 +26,7 @@ class Application(models.Model):
     event_id           = models.ForeignKey(Event, related_name="applications")
     creation_datetime  = models.DateTimeField()
     motivation         = models.TextField(null=True, blank=True)
-    special_motivation = models.TextField(blank=True, null=True, blank=True)
+    special_motivation = models.TextField(blank=True, null=True)
     referral_source_id = models.ForeignKey(ReferralSource, related_name="applications")
     teacher_id         = models.ForeignKey(Teacher, related_name="student_applications", null=True)
     status_id          = models.ForeignKey(Status)
