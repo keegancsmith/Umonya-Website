@@ -1,8 +1,8 @@
-# Create your views here.
 from django.http import HttpResponse
 from django import forms
 from django.template import loader, Context
 from umonya.apply.models import Student, Application, Event
+from django.db import models
 
 class StudentApplyForm(forms.Form):
     first_name = forms.CharField(max_length=30)
@@ -47,11 +47,14 @@ def list_events(request):
     i=0
     for x in events:
         e.append({})
-        e[i]['date'] = x.datetime
-        e[i]['location'] = x.location.address
+        
+        e[i]['date'] = x.start_datetime
+        e[i]['location'] = x.location_id.address
         e[i]['description'] = ''
-        e[i]['students_count'] = ''
-        e[i]['close_date'] = x.datetime
+        e[i]['students_count'] = len(list(Application.objects.filter(event_id=x)))
+        #e[i]['schools_count'] = Application.objects.filter(event_id=x).values('student_id').values('school_id').annotate(models.Count('school_id'))
+        e[i]['schools_count'] = 0
+        e[i]['close_date'] = x.end_datetime
         i+=1
     t = loader.get_template('events.html')
     return HttpResponse(t.render(Context({'events':e})))
