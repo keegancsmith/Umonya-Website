@@ -1,0 +1,18 @@
+{% extends "skeleton.html" %}
+{% block content %}
+<div id="content" class="content-wrap">
+  <div id="right-content"></div>
+  <div id="main-content">
+    <h2>Courses</h2>
+    <div class="course-box">
+      {% for course in courses %}
+      <h4>{{ course.date }} in {{ course.location }}</h4>
+      <p>{{ course.description }}</p>
+      <p>{{ course.students_count }} from {{ course.schools_count }} have applied so far</p>
+      <p>Applications closing in {{ course.date|timeuntil }}</p>
+      <a class="apply-button" href="apply/{{ course.id }}">Apply</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,206 @@
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+a, h1, h2 {
+  color: #417F9E;
+  font-weight: normal;
+}
+
+a img {
+  border: 0;
+}
+
+.content-wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+#header-wrap {
+  background-color: #F7F7F7;
+  background-image: url('img/header-bg2.png');
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #DDD;
+  height: 126px;
+}
+
+#header {
+  padding: 16px 0;
+}
+
+.no-bullets {
+  padding-left: 0;
+}
+
+.no-bullets li {
+  list-style: none;
+}
+
+.menu {
+  float: right;
+  width: 150px;
+}
+
+.menu img {
+  display: block;
+}
+
+a.big-button {
+  display: block;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 15px 5px;
+  text-align: center;
+  width: 200px;
+}
+
+a.big-button, a.apply-button {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background-color: #EEE;
+  border: 2px solid #568399;
+  margin-top: 5px;
+  padding: 5px 15px;
+}
+
+a.big-button:hover, a.apply-button:hover {
+  background-color: #CCC;
+}
+
+.contributor-box {
+  /* background-color: #F9F9FF; */
+  border: 1px solid #C0C0FF;
+  float: left;
+  height: 300px;
+  margin: 5px;
+  overflow: hidden;
+  padding: 15px;
+  width: 140px;
+}
+
+.contributor-box img {
+  height: 130px;
+  margin: 0 auto;
+  display: block;
+}
+
+.menu li {
+  border-bottom: 1px dashed #999;
+  display: block;
+  padding: 2px 0;
+  width: 140px;
+}
+
+.menu a:hover {
+  color: navy;
+}
+
+.last-menu {
+  border: none !important;
+}
+
+a.apply-button {
+  
+}
+
+.apply-button:hover {
+  
+}
+
+#content {
+  padding: 0 0 10px 20px;
+}
+
+#main-content {
+  width: 560px;
+}
+
+#right-content {
+  float: right;
+  width: 300px;
+}
+
+#main-content h2, #media-content h2 {
+  border-bottom: 2px solid #417FAF;
+  padding-bottom: 10px;
+}
+
+.course-box {
+  margin: 10px 0;
+  padding: 15px;
+}
+
+.sponsor-box {
+  /* background-color: #F9F9FF; */
+  border: 1px solid #C0C0FF;
+  margin: 10px 0;
+  padding: 15px;
+}
+
+.sponsor-box img {
+  float: left;
+  margin: 0 10px 10px 10px;
+}
+
+#social-icons li {
+  display: inline;
+  padding-right: 5px;
+}
+
+#social-icons img {
+  width: 48px;
+}
+
+#logo-list img {
+  height: 48px;
+  margin: 5px;
+}
+
+#logo-list li {
+  display: inline;
+  margin: 2px;
+}
+
+.break {
+  clear: both;
+}
+
+#sponsors-logos {
+  border-top: 1px solid #CCC;
+  margin: 20px auto 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer {
+  border-top: 1px solid #CCC;
+  font-size: 11px;
+  padding-top: 16px;
+  text-align: center;
+}

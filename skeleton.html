@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Umonya</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+  </head>
+  <body>
+    <!-- MENU -->
+    <div id="header-wrap">
+      <div id="header" class="content-wrap">
+        <img src="img/umonya-small.png">
+        <ul class="menu no-bullets">
+          <li><a href="get-involved">Get Involved</a></li>
+          <li><a href="media">Media</a></li>
+          <li><a href="about-us">About Us</a></li>
+          <li class="last-menu"><a href="contact-us">Contact Us</a></li>
+        </ul>
+        <ul class="menu no-bullets">
+          <li><a href="home">Home</a></li>
+          <li><a href="courses">Courses</a></li>
+          <li><a href="sponsors">Sponsors &amp; Collaborators</a></li>
+          <li class="last-menu"><a href="resources">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- END MENU -->
+
+    <div id="content" class="content-wrap">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+    
+    <div id="footer">
+      Copyright &copy; 2011
+    </div>
+  </body>
+</html>
