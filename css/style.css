@@ -44,7 +44,7 @@ a img {
 
 #header-wrap {
   background-color: #F7F7F7;
-  background-image: url('img/header-bg2.png');
+  background-image: url('/img/header-bg2.png');
   background-repeat: repeat-x;
   border-bottom: 1px solid #DDD;
   height: 126px;

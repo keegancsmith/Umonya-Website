@@ -1,0 +1,16 @@
+{% extends "skeleton.html" %}
+{% block content %}
+  <div id="right-content">
+
+  </div>
+  <div id="main-content">
+    <h2>Apply</h2>
+    {% for event in events %}
+      <h3>Event: {{ event.date }} - {{ event.location }}</h3>
+      <p>{{ event.description }}</p>
+      <p>{{ event.students_count }} from {{ event.schools_count }} have applied.</p>
+      <p>{{ event.close_date|timeuntil }}</p>
+      <a class=".apply-button" href="application/{{ event.id }}">Apply</a>
+    {% endfor %}
+  </div>
+{% endblock %}
