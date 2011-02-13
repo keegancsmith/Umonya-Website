@@ -72,12 +72,11 @@ a img {
 }
 
 a.big-button {
-  display: block;
   font-size: 14px;
   margin: 5px 0;
   padding: 15px 5px;
   text-align: center;
-  width: 200px;
+  width: 300px;
 }
 
 a.big-button, a.apply-button {
@@ -138,6 +137,7 @@ a.apply-button {
 }
 
 #main-content {
+  text-align: justify;
   width: 560px;
 }
 
