@@ -47,7 +47,6 @@ status_tb
 ---------
 status_id   - int
 description - varchar(100)
-active_ind(true) - boolean
 
 schools_tb
 ----------
@@ -55,13 +54,11 @@ school_id  - int
 name       - varchar(100)
 region_id  - int
 contact_id - int
-active_ind(true) - boolean
 
 referral_source_tb
 ------------------
 referral_source_id - int
 description        - varchar(100)
-active_ind(true) - boolean
 
 region_tb
 ---------
