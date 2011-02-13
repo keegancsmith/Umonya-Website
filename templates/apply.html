@@ -6,7 +6,10 @@
   <div id="main-content">
     <h2>Apply</h2>
     <form method="post" action="apply">
-      {% csrf_token %}
+      <table>
+        {{ form }}
+      </table>
+      <input type='submit' value='Submit'/>
     </form>
   </div>
 {% endblock %}
