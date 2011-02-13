@@ -1,10 +1,12 @@
 from django.conf.urls.defaults import *
+from umonya.apply.views import *
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^apply/', include()),
     # Example:
     # (r'^umonya/', include('umonya.foo.urls')),
 
