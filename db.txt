@@ -37,7 +37,8 @@ active_ind(true)     - boolean
 event_tb
 --------
 event_id         - int
-event_datetime   - datetime
+start_datetime   - datetime
+end_datetime     - datetime
 location_id      - int
 application_deadline - datetime
 url              - varchar(100)
@@ -47,7 +48,6 @@ status_tb
 ---------
 status_id   - int
 description - varchar(100)
-active_ind(true) - boolean
 
 schools_tb
 ----------
@@ -55,13 +55,11 @@ school_id  - int
 name       - varchar(100)
 region_id  - int
 contact_id - int
-active_ind(true) - boolean
 
 referral_source_tb
 ------------------
 referral_source_id - int
 description        - varchar(100)
-active_ind(true) - boolean
 
 region_tb
 ---------
