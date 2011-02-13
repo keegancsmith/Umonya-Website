@@ -54,7 +54,6 @@ schools_tb
 school_id  - int
 name       - varchar(100)
 region_id  - int
-contact_id - int
 
 referral_source_tb
 ------------------
