@@ -1,0 +1,96 @@
+learner_tb
+---------
+learner_id       - (GUID) char(??)
+first_name       - varchar(30)
+last_name        - varchar(30)
+school_id        - int
+alt_event(false) - boolean
+grade            - unsigned shortint
+email            - varchar(50)
+contact_no       - varchar(20)
+alt_contact_no   - varchar(20)
+active_ind(true) - boolean
+
+teacher_tb
+----------
+teacher_id       - (GUID) char(??)
+first_name       - varchar(30)
+last_name        - varchar(30)
+school_id        - int
+email            - varchar(50)
+contact_no       - varchar(20)
+active_ind(true) - boolean
+
+application_tb
+--------------
+learner_id           - (GUID) char(??)
+event_id             - int
+created_datetime     - datetime
+motivation           - varchar(1000)
+[special_motivation] - varchar(1000)
+referral_source_id   - int
+[teacher_id]         - (GUID) char(??)
+status_id(Incomplete)- int
+[status_reviewer_id] - int
+active_ind(true)     - boolean
+
+event_tb
+--------
+event_id         - int
+event_datetime   - datetime
+location_id      - int
+application_deadline - datetime
+url              - varchar(100)
+active_ind(true) - boolean
+
+status_tb
+---------
+status_id   - int
+description - varchar(100)
+active_ind(true) - boolean
+
+schools_tb
+----------
+school_id  - int
+name       - varchar(100)
+region_id  - int
+contact_id - int
+active_ind(true) - boolean
+
+referral_source_tb
+------------------
+referral_source_id - int
+description        - varchar(100)
+active_ind(true) - boolean
+
+region_tb
+---------
+region_id - int
+name      - varchar(100)
+
+location_tb
+-----------
+location_id - int
+region_id   - int
+address     - varchar(100)
+
+reviewer_tb
+-----------
+reviewer_id     - int
+name            - varchar(30)
+email           - varchar(50)
+salt            - char(10)
+password_hash   - char(??)
+admin(false)    - boolean
+event_admin     - many-to-many event_id
+event_reviewer  - many-to-many event_id
+
+review_tb
+---------
+student_id       - int
+event_id         - int
+created_datetime - datetime
+reviewer_id      - int
+[status_id]      - int
+[comment]        - varchar(300)
+[rating]         - unsigned shortint
