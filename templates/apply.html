@@ -1,0 +1,15 @@
+{% extends "templates/skeleton.html" %}
+{% block content %}
+  <div id="right-content">
+
+  </div>
+  <div id="main-content">
+    <h2>Apply</h2>
+    <form method="post" action="apply">
+      <table>
+        {{ form }}
+      </table>
+      <input type='submit' value='Submit'/>
+    </form>
+  </div>
+{% endblock %}

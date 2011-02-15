@@ -2,8 +2,7 @@
 
 import os.path
 
-# Assuming this file is stored in backend/umonya/
-toplevel_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+toplevel_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -74,8 +73,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(toplevel_dir, 'design/templates/'),
-    os.path.join(toplevel_dir, 'design/'),
+    os.path.join(toplevel_dir, 'templates/'),
+    toplevel_dir,
 )
 
 INSTALLED_APPS = (
@@ -86,4 +85,4 @@ INSTALLED_APPS = (
     'umonya.apply',
 )
 
-STATIC_DOC_ROOT = os.path.join(toplevel_dir, 'design/static')
+STATIC_DOC_ROOT = os.path.join(toplevel_dir, 'static')
