@@ -1,20 +1,13 @@
-from django.http import HttpResponse
-from django import forms
-from django.template import loader, Context
 from umonya.apply.models import *
-from django.db import models
-from datetime import datetime
+from umonya.apply.forms import *
 
-class StudentApplyForm(forms.Form):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
-    school = forms.CharField(max_length=50)
-    alt_event = forms.BooleanField(label='Would you like to receive an email about alternate events if we can not accept you for this one?')
-    grade = forms.IntegerField()
-    email = forms.EmailField(label='Email address')
-    concat_no = forms.CharField(max_length=20, label='Phone number')
-    alt_contact_no = forms.CharField(max_length=20, required=False, label='Parent\'s phone number')
-    motivation = forms.CharField(widget=forms.widgets.Textarea(),max_length=600, label='Please explain briefly (max. 600 characters) why you think you should be considered for this course.')
+from datetime import datetime
+from django import forms
+from django.db import models
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from django.template import loader, Context
+
 
 def student_apply(request):
     if request.method == 'POST':
@@ -23,15 +16,9 @@ def student_apply(request):
             pass # TODO save results of form
     else:
         form = StudentApplyForm()
-    t = loader.get_template('apply.html')
-    return HttpResponse(t.render(Context({'form': form})))
 
-class TeacherApplyForm(forms.Form):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
-    school = forms.CharField(max_length=50)
-    email = forms.EmailField(label='email address')
-    concat_no = forms.CharField(max_length=20, label='Phone number')
+    return render_to_response('apply.html', { 'form' : form })
+
 
 def teacher_apply(request):
     
@@ -41,8 +28,9 @@ def teacher_apply(request):
             pass # TODO save results of form
     else:
         form = TeacherApplyForm()
-    t = loader.get_template('apply.html')
-    return HttpResponse(t.render(Context({'form': form})))
+
+    return render_to_response('apply.html', { 'form' : form })
+
 
 def list_events(request):
     events = Event.objects.all()
@@ -60,9 +48,5 @@ def list_events(request):
         e[i]['close_date'] = x.end_datetime
         e[i]['id'] = str(x.location_id.address)+'-'+x.start_datetime.strftime('%Y-%m-%d')
         i+=1
-    t = loader.get_template('events.html')
-    return HttpResponse(t.render(Context({'events':e})))
 
-def render_page(request, template=''):
-    t=loader.get_template(template)
-    return HttpResponse(t.render(Context()))
+    return render_to_response('events.html', { 'events' : e })
