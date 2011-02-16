@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 class Region(models.Model):
@@ -95,7 +97,7 @@ class Reviewer(models.Model):
 class Application(models.Model):
     student_id         = models.ForeignKey(Student, related_name="applications")
     event_id           = models.ForeignKey(Event, related_name="applications")
-    creation_datetime  = models.DateTimeField()
+    creation_datetime  = models.DateTimeField(default = datetime.datetime.now)
     motivation         = models.TextField(null=True, blank=True)
     special_motivation = models.TextField(null=True, blank=True)
     referral_source_id = models.ForeignKey(ReferralSource, related_name="applications")
@@ -108,7 +110,7 @@ class Application(models.Model):
     active_ind         = models.BooleanField(default=True)
 
     def __unicode__(self):
-        return '%s for %s' % (unicode(self.student_id, self.event_id))
+        return '%s for %s' % (unicode(self.student_id), unicode(self.event_id))
 
 
 class Review(models.Model):
