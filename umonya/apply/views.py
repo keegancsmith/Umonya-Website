@@ -97,12 +97,16 @@ def list_events(request):
         event_id = '%s-%s' % (unicode(x.location_id.address),
                               x.start_datetime.strftime('%Y-%m-%d'))
 
+        schools_count = (School.objects
+                         .filter(students__applications__event_id = x)
+                         .count())
+
         e.append({
                 'date'           : x.start_datetime,
                 'location'       : x.location_id.address,
                 'description'    : '',
                 'students_count' : x.applications.count(),
-                'schools_count'  : 0,
+                'schools_count'  : schools_count,
                 'close_date'     : x.end_datetime,
                 'id'             : event_id,
         })
