@@ -34,15 +34,15 @@ def add_update_student(data):
 
 
     school = School.objects.get_or_create(name = data['school'],
-                                          region_id = region)[0]
+                                          region = region)[0]
 
     # XXX if a student already exists, should this create an error? At the
-    # moment this just creates a new student with a different student_id
+    # moment this just creates a new student with a different student
     student = Student.objects.create(
         student_id     = random_str(30),
         first_name     = data['first_name'],
         last_name      = data['last_name'],
-        school_id      = school,
+        school         = school,
         alt_event      = data['alt_event'],
         grade          = data['grade'],
         email          = data['email'],
@@ -51,15 +51,15 @@ def add_update_student(data):
 
 
     application = Application.objects.create(
-        student_id         = student,
+        student            = student,
         # XXX where do we get the event_id from? Hack around for the moment is
         # to pick a random event
-        event_id           = random.choice(Event.objects.all()),
-        motivation         = data['motivation'],
-        referral_source_id = referral_source,
-        teacher_id         = None,
-        status_id          = status,
-        status_reviewer_id = reviewer)
+        event           = random.choice(Event.objects.all()),
+        motivation      = data['motivation'],
+        referral_source = referral_source,
+        teacher         = None,
+        status          = status,
+        status_reviewer = reviewer)
 
 
 @transaction.commit_on_success
@@ -94,16 +94,16 @@ def list_events(request):
     e = []
 
     for x in events:
-        event_id = '%s-%s' % (unicode(x.location_id.address),
+        event_id = '%s-%s' % (unicode(x.location.address),
                               x.start_datetime.strftime('%Y-%m-%d'))
 
         schools_count = (School.objects
-                         .filter(students__applications__event_id = x)
+                         .filter(students__applications__event = x)
                          .count())
 
         e.append({
                 'date'           : x.start_datetime,
-                'location'       : x.location_id.address,
+                'location'       : x.location.address,
                 'description'    : '',
                 'students_count' : x.applications.count(),
                 'schools_count'  : schools_count,
