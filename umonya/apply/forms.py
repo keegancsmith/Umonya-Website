@@ -4,15 +4,16 @@ from django import forms
 
 
 class StudentApplyForm(forms.Form):
-    first_name     = forms.CharField(max_length = 30)
-    last_name      = forms.CharField(max_length = 30)
-    school         = forms.CharField(max_length = 50)
+    first_name     = forms.CharField(max_length=30)
+    last_name      = forms.CharField(max_length=30)
+    school         = forms.CharField(max_length=50)
     alt_event      = forms.BooleanField(
-        label = 'Would you like to receive an email about alternate events '
-                'if we can not accept you for this one?')
+        label='Would you like to receive an email about alternate events '
+              'if we can not accept you for this one?',
+        required=False)
     grade          = forms.IntegerField()
-    email          = forms.EmailField(label = 'Email address')
-    contact_no     = forms.CharField(max_length = 20, label='Phone number')
+    email          = forms.EmailField(label='Email address')
+    contact_no     = forms.CharField(max_length=20, label='Phone number')
     alt_contact_no = forms.CharField(
         max_length = 20,
         required   = False,
@@ -25,8 +26,8 @@ class StudentApplyForm(forms.Form):
 
 
 class TeacherApplyForm(forms.Form):
-    first_name = forms.CharField(max_length = 30)
-    last_name  = forms.CharField(max_length = 30)
-    school     = forms.CharField(max_length = 50)
-    email      = forms.EmailField(label = 'email address')
-    contact_no = forms.CharField(max_length = 20, label = 'Phone number')
+    first_name = forms.CharField(max_length=30)
+    last_name  = forms.CharField(max_length=30)
+    school     = forms.CharField(max_length=50)
+    email      = forms.EmailField(label= 'email address')
+    contact_no = forms.CharField(max_length=20, label='Phone number')

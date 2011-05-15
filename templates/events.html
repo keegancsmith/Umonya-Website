@@ -8,10 +8,10 @@
     {% for event in events %}
       <h3>Event: {{ event.date }} - {{ event.location }}</h3>
       <p>{{ event.description }}</p>
-      <p>{{ event.students_count }} learner{{ event.students_count|pluralize }} from {{ event.schools_count }} school{{ event.schools_count|pluralize }} have applied.</p>
+      <p>{{ event.student_count }} learner{{ event.student_count|pluralize }} from {{ event.school_count }} school{{ event.school_count|pluralize }} have applied.</p>
       <p>{{ event.close_date|timeuntil }}</p>
-      <a class="apply-button" href="apply/students/{{ event.id }}">Apply</a>
-      <a class="apply-button" href="apply/teachers/{{ event.id }}">Apply as a teacher</a>
+      <a class="apply-button" href="{{ event.id }}/student-apply/">Apply</a>
+      <a class="apply-button" href="{{ event.id }}/teacher-apply/">Apply as a teacher</a>
     {% endfor %}
   </div>
 {% endblock %}

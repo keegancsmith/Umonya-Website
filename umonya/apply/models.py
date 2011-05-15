@@ -62,10 +62,30 @@ class Event(models.Model):
     url            = models.URLField(max_length=100)
     active_ind     = models.BooleanField(default=True)
 
+    @classmethod
+    def get_by_slug(cls, slug):
+        location, year, month, day = slug.rsplit('-', 4)
+        try:
+            return cls.objects.filter(location__address__exact=location,
+                                      start_datetime__year=year,
+                                      start_datetime__month=month,
+                                      start_datetime__day=day).get()
+        except ValueError:
+            raise Event.DoesNotExist
+
+    @property
+    def school_count(self):
+        return (School.objects
+                .filter(students__applications__event=self)
+                .count())
+
+    @property
+    def slug(self):
+        return u'%s-%s' % (self.location.address,
+                           self.start_datetime.strftime('%Y-%m-%d'))
+
     def __unicode__(self):
-        return '%s from %s to %s' % (unicode(self.location),
-                                     unicode(self.start_datetime),
-                                     unicode(self.end_datetime))
+        return self.slug
 
 
 class Teacher(models.Model):
@@ -103,7 +123,7 @@ class Application(models.Model):
     referral_source    = models.ForeignKey(ReferralSource, related_name="applications")
     teacher            = models.ForeignKey(Teacher, related_name="student_applications", null=True)
     status             = models.ForeignKey(Status)
-    status_reviewer    = models.ForeignKey(Reviewer, related_name="applications_reviewed")
+    status_reviewer    = models.ForeignKey(Reviewer, related_name="applications_reviewed", null=True)
     completed          = models.BooleanField(default=False)
     email_sent         = models.BooleanField(default=False)
     rsvped             = models.BooleanField(default=False)
