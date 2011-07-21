@@ -1,4 +1,4 @@
-{% extends "templates/skeleton.html" %}
+{% extends "skeleton.html" %}
 {% block content %}
   <div id="right-content">
     <div>
@@ -10,9 +10,9 @@ o are already strong at computer programming and want to go beyond what is taugh
     </div>
     <div>
       <ul id="social-icons" class="no-bullets">
-        <li><a href="http://twitter.com/umonya"><img alt="" src="/img/social/twitter.png"></a></li>
-        <li><a href="http://www.facebook.com/group.php?gid=158365057523359"><img alt="" src="/img/social/facebook.png"></a></li>
-        <li><a href="#"><img alt="" src="/img/social/rss.png"></a></li>
+        <li><a href="http://twitter.com/umonya"><img alt="" src="{{ STATIC_URL}}/img/social/twitter.png"></a></li>
+        <li><a href="http://www.facebook.com/group.php?gid=158365057523359"><img alt="" src="{{ STATIC_URL }}/img/social/facebook.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ STATIC_URL }}/img/social/rss.png"></a></li>
       </ul>
     </div>
   </div>
@@ -30,10 +30,10 @@ We hold workshops throughout South Africa using the free and widely used Python 
 {% block extra_content %}
   <div id="sponsors-logos">
     <ul id="logo-list" class="no-bullets">
-      <li><a href="http://www.google.com/"><img alt="" src="/img/logos/google_logo.png"></a></li>
-      <li><a href="http://www.python.org/"><img alt="" src="/img/logos/python-logo.png"></a></li>
-      <li><a href="http://www.sun.ac.za/"><img alt="" src="/img/logos/sun_logo.png"></a></li>
-      <li><a href="http://www.uct.ac.za/"><img alt="" src="/img/logos/uctlogo.png"></a></li>
+      <li><a href="http://www.google.com/"><img alt="" src="{{ STATIC_URL }}/img/logos/google_logo.png"></a></li>
+      <li><a href="http://www.python.org/"><img alt="" src="{{ STATIC_URL }}/img/logos/python-logo.png"></a></li>
+      <li><a href="http://www.sun.ac.za/"><img alt="" src="{{ STATIC_URL }}/img/logos/sun_logo.png"></a></li>
+      <li><a href="http://www.uct.ac.za/"><img alt="" src="{{ STATIC_URL }}/img/logos/uctlogo.png"></a></li>
     </ul>
   </div>
 {% endblock %}
