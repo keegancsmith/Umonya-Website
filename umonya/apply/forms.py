@@ -29,5 +29,5 @@ class TeacherApplyForm(forms.Form):
     first_name = forms.CharField(max_length=30)
     last_name  = forms.CharField(max_length=30)
     school     = forms.CharField(max_length=50)
-    email      = forms.EmailField(label= 'email address')
+    email      = forms.EmailField(label='email address')
     contact_no = forms.CharField(max_length=20, label='Phone number')
