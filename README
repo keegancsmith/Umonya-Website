@@ -1,0 +1,28 @@
+.. -*- mode: rst -*-
+
+================
+ Umonya Website
+================
+
+This repository stores the code for http://umonya.co.za/
+
+The canonical location for this repository is at
+http://code.launchpad.net/umonya-website/ [bzr].
+
+Alternative mirrors:
+
+* https://bitbucket.org/keegan_csmith/umonya-website [hg]
+* https://github.com/keegancsmith/Umonya-Website [git]
+
+
+Deployment
+==========
+
+It is expected that this website is deployed using a virtual environment. You
+can install the requirements using::
+
+  pip install -r requirements.txt
+
+Hosting can then be done using any webserver that supports WSGI. There are
+alternative methods of deploying this website, see the Django documentation
+for more options.
