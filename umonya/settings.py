@@ -111,7 +111,6 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(project_dir, 'templates'),
-#    os.path.join(project_dir, 'content', 'templates'),
 )
 
 INSTALLED_APPS = (

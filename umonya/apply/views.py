@@ -2,6 +2,8 @@ from umonya.apply.models import *
 from umonya.apply.forms import *
 
 from datetime import datetime
+
+from annoying.decorators import render_to
 from django import forms
 from django.db import models, transaction
 from django.http import Http404, HttpResponseRedirect
@@ -55,6 +57,7 @@ def add_update_student(data, event):
         status_reviewer = None)
 
 
+@render_to('apply.html')
 @transaction.commit_on_success
 def student_apply(request, event_slug):
     try:
@@ -72,9 +75,10 @@ def student_apply(request, event_slug):
     else:
         form = StudentApplyForm()
 
-    return render_to_response('apply.html', { 'form' : form })
+    return { 'form' : form }
 
 
+@render_to('apply.html')
 def teacher_apply(request, event):
     try:
         event = Event.get_by_slug(event_slug)
@@ -88,9 +92,10 @@ def teacher_apply(request, event):
     else:
         form = TeacherApplyForm()
 
-    return render_to_response('apply.html', { 'form' : form })
+    return { 'form' : form }
 
 
+@render_to('events.html')
 def list_events(request):
     events = Event.objects.all()
     e = []
@@ -106,4 +111,4 @@ def list_events(request):
                 'id'            : x.slug,
         })
 
-    return render_to_response('events.html', { 'events' : e })
+    return { 'events' : e }
