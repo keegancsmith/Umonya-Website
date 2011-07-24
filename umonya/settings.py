@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'uni_form',
     'umonya.apply',
     'umonya.content',
 )

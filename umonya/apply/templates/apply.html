@@ -1,15 +1,20 @@
 {% extends "base.html" %}
+{% block extra_head %}
+<script src="{{ STATIC_URL }}js/jquery.min.js" type="text/javascript"></script>
+{% include "uni_form/includes.html" %}
+{% endblock %}
+
+{% load uni_form_tags %}
+
 {% block content %}
   <div id="right-content">
 
   </div>
   <div id="main-content">
     <h2>Apply</h2>
-    <form method="post" action="apply">
-      <table>
-        {{ form.as_table }}
-      </table>
-      <input type='submit' value='Submit'/>
+    <form method="post" action="apply" class="uniForm">
+      {% csrf_token %}
+      {% uni_form form form.helper %}
     </form>
   </div>
 {% endblock %}

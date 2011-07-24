@@ -1,9 +1,22 @@
 from umonya.apply.models import *
 
 from django import forms
+from uni_form.helpers import FormHelper, Submit
 
 
-class StudentApplyForm(forms.Form):
+class UniFormSubmitForm(forms.Form):
+
+    @property
+    def helper(self):
+        helper = FormHelper()
+        submit = Submit('submit', 'Submit your application')
+        helper.add_input(submit)
+        helper.form_action = self.form_action
+        helper.form_method = 'POST'
+        return helper
+
+
+class StudentApplyForm(UniFormSubmitForm):
     first_name     = forms.CharField(max_length=30)
     last_name      = forms.CharField(max_length=30)
     school         = forms.CharField(max_length=50)
@@ -24,10 +37,14 @@ class StudentApplyForm(forms.Form):
         label      = 'Please explain briefly (max. 600 characters) why you '
                      'think you should be considered for this course.')
 
+    form_action = 'apply'
 
-class TeacherApplyForm(forms.Form):
+
+class TeacherApplyForm(UniFormSubmitForm):
     first_name = forms.CharField(max_length=30)
     last_name  = forms.CharField(max_length=30)
     school     = forms.CharField(max_length=50)
     email      = forms.EmailField(label='email address')
     contact_no = forms.CharField(max_length=20, label='Phone number')
+
+    form_action = 'apply'

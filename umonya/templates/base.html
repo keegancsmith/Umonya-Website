@@ -3,13 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Umonya</title>
-    <link href="{{ STATIC_URL }}/css/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" type="text/css" media="screen">
+    {% block extra_head %}{% endblock %}
   </head>
   <body>
     <!-- MENU -->
     <div id="header-wrap">
       <div id="header" class="content-wrap">
-        <a href="/"><img src="{{ STATIC_URL }}/img/umonya-small.png"></a>
+        <a href="/"><img src="{{ STATIC_URL }}img/umonya-small.png"></a>
         <ul class="menu no-bullets">
           <li><a href="/get-involved">Get Involved</a></li>
           <li><a href="/media">Media</a></li>
