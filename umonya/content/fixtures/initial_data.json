@@ -1,0 +1,68 @@
+[
+  {
+    "pk": 1, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/google_logo.png", 
+      "years": "2011", 
+      "type": "Sponsor", 
+      "name": "Google", 
+      "description": "Their CS4HS and K-12 divisions have funded our growth and allowed us to expand beyond the Cape Town region"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/mih.jpg", 
+      "years": "2010", 
+      "type": "Sponsor", 
+      "name": "MIH Media Lab", 
+      "description": "Funded Stellenbosch University pilot workshop and gave a talk"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/google_logo.png", 
+      "years": "2010", 
+      "type": "Sponsor", 
+      "name": "S1", 
+      "description": "Funded two University of Cape Town workshops and gave talks"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/uctlogo.png", 
+      "years": "2010", 
+      "type": "Collaborator", 
+      "name": "University of Cape Town", 
+      "description": "Supplied facilities for workshops"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/sun_logo.png", 
+      "years": "2010", 
+      "type": "Collaborator", 
+      "name": "Stellenbosch University", 
+      "description": "Supplied facilities for workshops"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "content.sponsor", 
+    "fields": {
+      "image_path": "/static/img/logos/siliconcape.jpg", 
+      "years": "2011", 
+      "type": "Collaborator", 
+      "name": "Silicon Cape", 
+      "description": ""
+    }
+  }
+]
