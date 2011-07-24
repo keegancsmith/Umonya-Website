@@ -3,7 +3,17 @@
   <div id="right-content">
   </div>
   <div id="main-content">
-    <h2>Upcoming events</h2>
+    <p>
+      Workshops are run over a full weekend and are divided between lectures
+      and practical sessions with lunch time providing an opportunity for our
+      sponsors to provide insight into the programming industry. Lecturers
+      will lead each session, demonstrating concepts and elaborating on the
+      content of the notes with tutors available throughout for help on any
+      problems that may be encountered.
+    </p>
+
+    <h2>Upcoming workshops</h2>
+    {% if events %}
     {% for event in events %}
       <h3>Event: {{ event.date }} - {{ event.location }}</h3>
       <p>{{ event.description }}</p>
@@ -12,5 +22,8 @@
       <a class="apply-button" href="{{ event.id }}/student-apply/">Apply</a>
       <a class="apply-button" href="{{ event.id }}/teacher-apply/">Apply as a teacher</a>
     {% endfor %}
+    {% else %}
+      <p>There are no upcoming events...</p>
+    {% endif %}
   </div>
 {% endblock %}
